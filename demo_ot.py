@@ -5,15 +5,12 @@ from otprotocol.protocol import Protocol, Head
 p = Protocol()
 
 #append decks to Protocol object
-p200_rack = p.deck("p200_rack", labware="tiprack-200ul")
-trough = p.deck("trough", labware="trough-12row")
-plate_1 = p.deck("plate_1", labware="96-flat")
-plate_2 = p.deck("plate_2", labware="96-flat")
-plate_3 = p.deck("plate_3", labware="96-flat")
-trash = p.deck("trash", labware="point")
+p200_rack = p.deck("p200_rack", labware="tiprack-200ul", slot=1)
+trough = p.deck("trough", labware="trough-12row", slot=2)
+plate_1 = p.deck("plate_1", labware="96-flat", slot=3)
+trash = p.deck("trash", labware="point", slot=4)
 
 #create head object
-#Currently don't know how much of this should be default, eventually create and append in protocol?
 p200 = Head( "p200", #name
 	{	#opts
 	"tool" : "pipette", 
@@ -32,12 +29,11 @@ p200 = Head( "p200", #name
 		}
 	)
 
-
 #add head object to protocol
 p.set_head(p200)
 
-#append instructions (not working)
+#append instructions 
 p.transfer("trough","A1","plate_1","A1",100)
-p.transfer("plate_2","A2","plate_3","A2",10)
+
 
 print json.dumps(p.as_dict(), indent=2)

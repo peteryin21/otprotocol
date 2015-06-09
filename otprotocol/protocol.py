@@ -21,13 +21,12 @@ class Protocol(object):
 			self.decks[deck.name] = deck
 		self.instructions = instructions or []
 
-	def deck(self, name, labware):
+	def deck(self, name, labware, slot):
 		"""Append a Deck object to deck list associated with protocol."""
 		opts = {}
 		opts["labware"] = labware
+		opts["slot"] = slot
 		self.decks[name] = Deck(name, opts)
-		container = Container(labware)
-		return container
 
 	def set_head(self, head):
 		self.head = head
