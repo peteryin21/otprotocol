@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: otprotocol
+Version: 1.0
+Summary: Python library for generating autoprotocol for OpenTrons
+Home-page: http://github.com/peteryin21/otprotocol
+Author: Peter Yin
+Author-email: py.peteryin@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN

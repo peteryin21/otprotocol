@@ -1,0 +1,5 @@
+setup.py
+otprotocol.egg-info/PKG-INFO
+otprotocol.egg-info/SOURCES.txt
+otprotocol.egg-info/dependency_links.txt
+otprotocol.egg-info/top_level.txt
