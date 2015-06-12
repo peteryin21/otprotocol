@@ -93,7 +93,7 @@ class Protocol(object):
 				"touch-tip":touch_tip
 			}
 			dest_groups.append(d)
-		#says source not defined??
+
 		x = { 	
 			"from": {
 				"container": source,
@@ -109,4 +109,34 @@ class Protocol(object):
 		dist["distribute"] = x
 		self.instructions.append(dist)
 
+
+	def consolidate(self, source, source_wells, dest, dest_well, volumes, touch_tip=True, blowout=True):
+		source_groups = []
+		#pdb.set_trace()
+		if not isinstance(volumes,list):
+			volumes = [volumes]*len(source_wells)
+
+		for well, vol in zip(source_wells, volumes):
+			d = {
+				"container": source,
+				"location": well,
+				"volume": vol,
+				"touch-tip":touch_tip
+			}
+			source_groups.append(d)
+
+		x = { 	
+			"from": source_groups,
+
+			"to": {
+				"container": dest,
+				"location": dest_well,
+
+			},
+			"blowout": blowout,
+		}
+
+		cons = {}
+		cons["consolidate"] = x
+		self.instructions.append(cons)
 
