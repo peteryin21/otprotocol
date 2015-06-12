@@ -34,6 +34,9 @@ p.set_head(p200)
 
 #append instructions 
 p.transfer("trough","A1","plate_1","A1",100)
+p.transfer("trough", ["A1","A2"],"plate_1", ["B1","B2"],[100,20])
+p.distribute("trough","A1","plate_1",["A1","A2","A3"],[20, 30, 100])
+
 
 
 print json.dumps(p.as_dict(), indent=2)
