@@ -5,14 +5,15 @@ Python library for generating [Autoprotocol](http://www.autoprotocol.org) for th
 Based off of [Autoprotocol-python](http://github.com/autoprotocol/autoprotocol-python) library.
 
 
-## Installation
+## Installation and Demo
 
-	$ git clone https://github.com/autoprotocol/autoprotocol-python
-	$ cd autoprotocol-python
-	$ python setup.py install
+	$ git clone https://github.com/peteryin21/otprotocol
+	$ cd otprotocol
+	$ sudo python setup.py install
+	$ python demo_ot.py
 
 ## Usage
-'''python
+```python
 import json
 from otprotocol.protocol import Protocol, Head
 
@@ -57,11 +58,11 @@ p.consolidate("plate_1",["A1","A2","A3"],"plate_2","A1",[20, 30, 100])
 p.mix("plate_2", "A1", 20)
 
 print json.dumps(p.as_dict(), indent=2)
-'''
+```
 
 This produces the following JSON:
 
-'''
+```
 {
   "head": {
     "p200": {
@@ -257,4 +258,4 @@ This produces the following JSON:
     }
   }
 }
-'''
+```
