@@ -140,3 +140,21 @@ class Protocol(object):
 		cons["consolidate"] = x
 		self.instructions.append(cons)
 
+	def mix(self, source, source_well, volume, repetitions=5, blowout=True, liquid_tracking=True):     
+		x = {
+			"conatiner": source,
+			"location": source_well,
+			"volume": volume,
+			"repetitions": repetitions,
+			"blowout": blowout,
+			"liquid-tracking": liquid_tracking
+		}
+
+		mix = {}
+		mix["mix"] = [x]
+		self.instructions.append(mix)
+
+
+
+
+
