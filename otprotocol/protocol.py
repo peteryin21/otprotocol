@@ -1,5 +1,5 @@
 import json
-import pdb
+
 class Deck(object):
     """Elements of OT deck"""
     def __init__(self, name, opts):
@@ -21,11 +21,11 @@ class Protocol(object):
 			self.decks[deck.name] = deck
 		self.instructions = instructions or []
 
-	def deck(self, name, labware, slot):
+	def deck(self, name, labware):
 		"""Append a Deck object to deck list associated with protocol."""
 		opts = {}
 		opts["labware"] = labware
-		opts["slot"] = slot
+		#opts["slot"] = slot
 		self.decks[name] = Deck(name, opts)
 
 	def set_head(self, head):

@@ -5,14 +5,15 @@ from otprotocol.protocol import Protocol, Head
 p = Protocol()
 
 #append decks to Protocol object
-p200_rack = p.deck("p200_rack", labware="tiprack-200ul", slot=1)
-trough = p.deck("trough", labware="trough-12row", slot=2)
-plate_1 = p.deck("plate_1", labware="96-flat", slot=3)
-trash = p.deck("trash", labware="point", slot=4)
+p200_rack = p.deck("p200_rack", labware="tiprack-200ul")
+trough = p.deck("trough", labware="trough-12row")
+plate_1 = p.deck("plate_1", labware="96-flat")
+plate_2 = p.deck("plate_2", labware="96-flat")
+trash = p.deck("trash", labware="point")
 
 #create head object
 p200 = Head( "p200", #name
-	{	#opts
+	{#opts
 	"tool" : "pipette", 
 	"tip_racks" : [{"container":"p200_rack"}],
 	"trash_container" : {"container":"trash"},
